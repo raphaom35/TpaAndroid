@@ -1,0 +1,12 @@
+{
+  "name": "TpaAndroid",
+  "displayName": "TpaAndroid",
+  "expo": {
+    "name": "TpaAndroid",
+    "slug": "TpaAndroid",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

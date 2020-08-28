@@ -2,11 +2,19 @@
   "name": "TpaAndroid",
   "displayName": "TpaAndroid",
   "expo": {
-    "name": "TpaAndroid",
-    "slug": "TpaAndroid",
+    "name": "Tpa_Android",
+    "slug": "tpa_android",
     "version": "1.0.0",
+    "icon": "./src/assets/images/TPALogo.png",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "description": "",
+    "android": {
+      "package": "com.rapha35.tpa_android"
+    }
+  },
+  "experiments": {
+    "redesignedLogBox": true
   }
 }

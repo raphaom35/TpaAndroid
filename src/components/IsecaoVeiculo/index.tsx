@@ -27,13 +27,15 @@ const IsecaoVeiculo: React.FC<IsecaoVeiculoProps> = ({ veiculo_isencao }) => {
         <View style={styles.profileInfo}>
           {/* <Text style={styles.name}>{veiculo_isencao?.placa}</Text> */}
           {/* <Text style={styles.placa}>Placas:EHCJSH,EURUAI</Text> */}
-          {console.log(veiculo_isencao.placa)}
+
           <Text style={styles.name}>{veiculo_isencao?.placa}</Text>
           <Text style={styles.placa}>
-            Data Inicio:{veiculo_isencao?.data_inicio}
+            Data inicial:
+            {veiculo_isencao?.data_inicio.toString().replace("00:00:00", "")}
           </Text>
           <Text style={styles.placa}>
-            Data Inicio:{veiculo_isencao?.data_fim}
+            Data final:
+            {veiculo_isencao?.data_fim.toString().replace("00:00:00", "")}
           </Text>
         </View>
       </View>

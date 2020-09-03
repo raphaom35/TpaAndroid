@@ -8,7 +8,7 @@ import styles from "./styles";
 import { useFocusEffect } from "@react-navigation/native";
 import { MaterialIcons, MaterialCommunityIcons } from "@expo/vector-icons";
 import ActionButton from "react-native-action-button";
-const Perfil: React.FC = () => {
+const Esqueceu: React.FC = () => {
   const [favorites, setFavorites] = useState([]);
   useFocusEffect(() => {
     YellowBox.ignoreWarnings(["Animated: `useNativeDriver`"]);
@@ -20,4 +20,4 @@ const Perfil: React.FC = () => {
   );
 };
 
-export default Perfil;
+export default Esqueceu;

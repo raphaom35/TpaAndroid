@@ -7,6 +7,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import GiveClasses from "../pages/GiveClasses";
 import HomeTabs from "./HomeTabs";
 import Login from "../pages/Login";
+import Esqueceu from "../pages/Esqueceu";
+import Cadastro from "../pages/Cadastro";
 const { Navigator, Screen } = createStackNavigator();
 function AppStack() {
   return (
@@ -15,6 +17,8 @@ function AppStack() {
         <Screen name="Login" component={Login} />
         <Screen name="GiveClasses" component={GiveClasses} />
         <Screen name="Home" component={HomeTabs} />
+        <Screen name="Esqueceu" component={Esqueceu} />
+        <Screen name="Cadastro" component={Cadastro} />
       </Navigator>
     </NavigationContainer>
   );

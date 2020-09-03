@@ -5,8 +5,8 @@ export interface VeiculosEntity {
   placa: string;
   renavam: string;
   tipo_isencao: number;
-  data_inicio: string;
-  data_fim: string;
+  data_inicio: Date;
+  data_fim: Date;
   situacao: number;
   tipo_veiculo: number;
   anexo?: string | null;

@@ -1,37 +1,34 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, TextInput, ToastAndroid } from "react-native";
+import { View, Text, ToastAndroid } from "react-native";
 import styles from "./styles";
 import PageHeader from "../../components/PageHeader";
 import IsecaoVeiculo from "../../components/IsecaoVeiculo";
-import { Feather } from "@expo/vector-icons";
-import {
-  ScrollView,
-  BorderlessButton,
-  RectButton,
-} from "react-native-gesture-handler";
+import { ScrollView } from "react-native-gesture-handler";
 
 import { useNavigation, useRoute } from "@react-navigation/native";
 import api from "../../services/api";
-import AsyncStoreger from "@react-native-community/async-storage";
-import { useFocusEffect } from "@react-navigation/native";
+import { AsyncStorage } from "react-native";
 import { Token } from "../../interfaces/token";
 import { Isencao_class } from "../../interfaces/isencao";
 import {
   Veiculo_isencao,
   VeiculosEntity,
 } from "../../interfaces/veiculo_isencao";
-import VeiculoItem from "../../components/VeiculoItem";
-
-const Isencao: React.FC = () => {
+interface RootStackParamList {
+  toke: String;
+}
+const Isencao: React.FC = ({}) => {
   const [token, setToken] = useState<Token>();
   const [isencao, setIsencao] = useState<Isencao_class>();
   const [veiculos, setVeiculos] = useState<Veiculo_isencao>();
-  const [didMount, setDidMount] = useState(false);
+  const [] = useState(false);
+  const {} = useNavigation();
   async function loadIsenccao() {
-    AsyncStoreger.getItem("token").then(async (response) => {
+    AsyncStorage.getItem("token").then(async (response) => {
       if (response) {
         const token: Token = JSON.parse(response);
         setToken(token);
+
         //await get_icencao(token);
         //console.log(token.token);
       } else {
@@ -44,14 +41,14 @@ const Isencao: React.FC = () => {
     formData.append("token", token);
     formData.append("cpf", cpf);
     const response_isencao = await api.post("?get_isencao_cli", formData);
-    console.log(response_isencao.data);
+    //console.log(response_isencao.data);
     if (response_isencao != null) {
       try {
         const isen: Isencao_class = JSON.parse(
           JSON.stringify(response_isencao.data)
         );
         setIsencao(isen);
-        console.log(isen?.codigo);
+        //console.log(isen?.codigo);
         //await get_veiculos(String(isen?.codigo), token.token);
       } catch (e) {
         ToastAndroid.show(e, ToastAndroid.SHORT);
@@ -72,7 +69,7 @@ const Isencao: React.FC = () => {
       "?get_veiculo_isencao",
       formDataVei
     );
-    console.log(response_veicuolas.data);
+    //console.log(response_veicuolas.data);
     if (response_veicuolas != null) {
       //console.log(JSON.stringify(response_veicuolas.data));
       try {
@@ -94,6 +91,7 @@ const Isencao: React.FC = () => {
   useEffect(() => {
     // setDidMount(true);
     const fetchData = async () => {
+      console.log();
       loadIsenccao();
     };
     fetchData();
@@ -157,7 +155,9 @@ const Isencao: React.FC = () => {
               <Text style={styles.label_veiculo_title}>Veiculos</Text>
             </View>
             {veiculos?.veiculos?.map((veiculo: VeiculosEntity) => {
-              return <IsecaoVeiculo veiculo_isencao={veiculo} />;
+              return (
+                <IsecaoVeiculo key={veiculo.placa} veiculo_isencao={veiculo} />
+              );
 
               //console.log(veiculo);
             })}

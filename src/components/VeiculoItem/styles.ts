@@ -3,8 +3,8 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
-    borderWidth: 1,
-    borderColor: "#e6e6f0",
+    borderWidth: 1.5,
+    borderColor: "#2f6d91",
     borderRadius: 8,
     marginBottom: 16,
     overflow: "hidden",
@@ -21,10 +21,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#eee",
   },
   veiculoInfo: {
-    marginLeft: 16,
+    marginLeft: 10,
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   ceditoInfo: {
-    justifyContent: "space-between",
+    justifyContent: "center",
     marginLeft: 100,
   },
   name: {

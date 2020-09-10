@@ -21,7 +21,7 @@ const Esqueceu: React.FC = () => {
     loadtoken();
   });
   async function loadtoken() {
-    AsyncStoreger.getItem("token").then(async (response) => {
+    AsyncStorage.getItem("token").then(async (response) => {
       if (response) {
         const token: Token = JSON.parse(response);
         setToken(token);

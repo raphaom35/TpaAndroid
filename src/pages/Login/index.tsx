@@ -36,7 +36,10 @@ const Login: React.FC = () => {
     const formData = new FormData();
     formData.append("auth", "1");
     //`{\"user\":\"" + ${user} + "\",\"pass\":\"" + ${pass} + "\"}`
-    formData.append("cred", `{"user":"${user_}","pass":"${pass}"}`);
+    formData.append(
+      "cred",
+      `{"user":"${user_}","pass":"${CryptoJS.MD5(pass)}"}`
+    );
     // formData.append(
     //   "cred",
     //   `{"user":"treinamento@sophiaeteresinharestauranteltda.com.br","pass":"fce22b8abcb1120000b6905587e047e8"}`
@@ -97,7 +100,7 @@ const Login: React.FC = () => {
               placeholderTextColor="#2f6d91"
               secureTextEntry={true}
               value={pass}
-              onChangeText={(text) => setPass(CryptoJS.MD5(text))}
+              onChangeText={(text) => setPass(text)}
             ></TextInput>
           </View>
         </View>

@@ -8,7 +8,8 @@ import styles from "./styles";
 import { RectButton } from "react-native-gesture-handler";
 import { useState } from "react";
 import api from "../../services/api";
-
+import { veiculocre } from "../../interfaces/veiculocre";
+import { FontAwesome5 } from "@expo/vector-icons";
 export interface Teacher {
   id: number;
   subject: string;
@@ -18,22 +19,22 @@ export interface Teacher {
   whatsapp: string;
   bio: string;
 }
-interface TeacherItemProps {
-  teacher: Teacher;
-  favorited: boolean;
+interface VeiculoProps {
+  veiculo_: veiculocre;
 }
-const VeiculoItem: React.FC = ({}) => {
+const VeiculoItem: React.FC<VeiculoProps> = ({ veiculo_ }) => {
   return (
     <View style={styles.container}>
       <View style={styles.profile}>
         {/* <Image style={styles.avatar} source={{ uri: teacher.avatar }} /> */}
+        <FontAwesome5 name={veiculo_.tipo_icon} size={30} color="black" />
         <View style={styles.veiculoInfo}>
-          <Text style={styles.name}>Automovel</Text>
-          <Text style={styles.placa}>EHCJSH</Text>
+          <Text style={styles.name}>{veiculo_.tipo}</Text>
+          <Text style={styles.placa}>{veiculo_.placa}</Text>
         </View>
         <View style={styles.ceditoInfo}>
           <Text style={styles.name}>Crédito</Text>
-          <Text style={styles.credito}>0</Text>
+          <Text style={styles.credito}>{veiculo_.credito}</Text>
         </View>
       </View>
     </View>

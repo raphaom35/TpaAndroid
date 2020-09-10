@@ -169,9 +169,11 @@ const Isencao: React.FC = ({}) => {
             })} */}
           </>
         ) : (
-          <Text style={styles.text_nao}>
-            Não Exite Inseções para esse cliente
-          </Text>
+          <View style={styles.text_naovw}>
+            <Text style={styles.text_nao}>
+              Não Exite Inseções para esse cliente
+            </Text>
+          </View>
         )}
       </ScrollView>
     </View>

@@ -3,8 +3,9 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
-    borderWidth: 1,
-    borderColor: "#e6e6f0",
+    borderWidth: 1.5,
+    //borderColor: "#e6e6f0",
+    borderColor: "#2f6d91",
     borderRadius: 8,
     marginBottom: 16,
     overflow: "hidden",
@@ -46,6 +47,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fafafc",
     padding: 24,
     alignItems: "center",
+    marginTop: -20,
   },
   price: {
     fontFamily: "Poppins_400Regular",

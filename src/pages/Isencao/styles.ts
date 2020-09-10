@@ -45,8 +45,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 230,
-    marginLeft: 15,
+  },
+  text_naovw: {
+    fontFamily: "Archivo_700Bold",
+    fontSize: 20,
+    justifyContent: "center",
+    marginTop: 160,
   },
   submitButtonText: {
     color: "#fff",

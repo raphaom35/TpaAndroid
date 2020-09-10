@@ -27,6 +27,7 @@ const Cadastro: React.FC = () => {
   const [showfisica, SetShowfisica] = useState<boolean>(false);
   const [showjurudica, SetShowjuridica] = useState<boolean>(false);
   const [token, setToken] = useState<Token>();
+  const [op, setOp] = useState("");
   const [options, setOptions] = useState();
   const [nome, setNome] = useState("");
   const [nome_empresa, setNome_empresa] = useState("");
@@ -52,6 +53,7 @@ const Cadastro: React.FC = () => {
     });
   }
   function handleValueChange(pessoa: String) {
+    setOp(String(pessoa));
     if (pessoa == "juridica") {
       SetShowjuridica(true);
       SetShowfisica(false);
@@ -142,7 +144,7 @@ const Cadastro: React.FC = () => {
           style={{
             width: "80%",
           }}
-          selectedValue={options}
+          selectedValue={op}
           mode="dialog"
           onValueChange={handleValueChange}
           itemStyle={{

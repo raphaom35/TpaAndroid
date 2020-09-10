@@ -30,8 +30,6 @@ const Login: React.FC = () => {
   const [icon, setIcon] = useState("eye-off");
   const [hidePassword, setHidePassword] = useState(true);
 
-  useEffect(() => {}, []);
-
   async function handlesLogin() {
     const formData = new FormData();
     formData.append("auth", "1");

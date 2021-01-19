@@ -9,7 +9,7 @@ TPA
 </p>
 
 <div align="center">
-<img src="Tpa_Android.gif" width="150" />
+<img src="Tpa_Android.gif" width="200" />
 
 </div>
 

@@ -38,10 +38,6 @@ const Login: React.FC = () => {
       "cred",
       `{"user":"${user_}","pass":"${CryptoJS.MD5(pass)}"}`
     );
-    // formData.append(
-    //   "cred",
-    //   `{"user":"treinamento@sophiaeteresinharestauranteltda.com.br","pass":"fce22b8abcb1120000b6905587e047e8"}`
-    // );
     const response = await api.post("", formData);
     //navigate("GiveClasses");
     const stringjson = JSON.stringify(response.data);
